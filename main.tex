@@ -36,7 +36,7 @@
 % REFERENCES
 % References package and formatting (biblatex, esp with biber, is more modern and flexible than bibtex)
 % For styles see https://www.overleaf.com/learn/latex/Biblatex_bibliography_styles
-\usepackage[backend=biber, style=nature, minnames=12, maxnames=12]{biblatex}
+\usepackage[backend=biber, style=nature, minnames=12, maxnames=12]{biblatex} %use apa for name and year
 % Suppress URL and DOI fields (reuires package biblatex and not bibtex)
 \AtEveryBibitem{
   \clearfield{url}
@@ -54,12 +54,13 @@
 \begin{refsection} % Allows separate references for main paper and, later, appendix
 \input{sections/2_abstract}
 \input{sections/3_introduction}
-
-
+\input{sections/4_methods}
+\input{sections/5_results}
+\input{sections/6_discussion}
 % References
 \printbibliography
 \end{refsection}
-
+\include{sections/7_other_material}
 
 % Number for supplementary material
 \newcommand{\beginsupplement}{
