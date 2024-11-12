@@ -2,15 +2,17 @@
 
 \subsection{Scenario analysis}
 
-Figure \ref{fig:scenarios_overview} shows the range of results, measured by utility or the proportion of patients with an outcome of mRS 0-2, separating the changes for nLVO and LVO. Across all scenarios MSUs are usually found to be advantageous compared with usual care, but in some scenarios (comparing the best likely usual care with the worst likely MSU care), MSUs were found to be disadvantageous compared with usual care. Across the majority of scenarios the benefit of MSU care over usual care was typicall (interquartile range across scenarios) an improvement of 0.005 to 0.021 in utility for nLVO, and 0.016-0.052 for LVO treated with both IVT and MT. This translated to an improvement of the proportion of patients mRS 0-2 of 0.005-0.023 for nLVO, and 0.017-0.055 for LVO treated with both IVT and MT. The benefit to patients with LVO was derived mostly by improving benefit of MT by direct transport to a MT-capable unit.
+Figure \ref{fig:scenarios_overview} shows the range of results, measured by utility or the proportion of patients with an outcome of mRS 0-2, separating the changes for nLVO and LVO. Across all scenarios MSUs are usually found to be advantageous compared with usual care, but in some scenarios (comparing the best likely usual care with the worst likely MSU care), MSUs were found to be disadvantageous compared with usual care. Across the majority of scenarios the benefit of MSU care over usual care was typically (interquartile range across scenarios) an improvement of 0.005 to 0.021 in utility for nLVO, and 0.016-0.052 for LVO treated with both IVT and MT. This translated to an improvement of the proportion of patients mRS 0-2 of 0.005-0.023 for nLVO, and 0.017-0.055 for LVO treated with both IVT and MT. The benefit to patients with LVO was derived mostly by improving benefit of MT by direct transport to a MT-capable unit. For the combined nLVO/LVO population (assuming 70\% nLVO and 30\%LVO in the treated population) there was typically (interquartile range across scenarios) an improvement of 0.010-0.029 in utility, and improvement of the proportion of patients mRS 0-2 of 0.011-0.032.
 
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.6\linewidth]{images/scenario_results_summary.png}
-    \caption{Benefit of usual care over MSU care across all scenarios, in the treated population, measured by utility or the proportion of patients with an outcome of mRS0-2, separating the changes for nLVO and LVO. Results for LVO show the effect of MSUs on the benefit derived from IVT alone, or by IVT/MT in combination. Box plots show range, interquartile range, and median. Overlaid over the box plots are violin plots showing the distribution of results across all scenarios. A positive value indicates MSUs provide an advantage over usual care, and a negative result show MSUs are disadvantageous compared with usual care. Results are the average effect across all LSOAs in England.}
+    \caption{Benefit of usual care over MSU care across all scenarios, in the treated population, measured by utility or the proportion of patients with an outcome of mRS0-2, separating the changes for nLVO and LVO. Results for LVO show the effect of MSUs on the benefit derived from IVT alone, or by IVT/MT in combination. Box plots show range, interquartile range, and median. The combined nLVO/LVO benefit assumed 70\% nLVO and 30\%LVO in the treated population. Overlaid over the box plots are violin plots showing the distribution of results across all scenarios. A positive value indicates MSUs provide an advantage over usual care, and a negative result show MSUs are disadvantageous compared with usual care. Results are the average effect across all LSOAs in England.}
     \label{fig:scenarios_overview}
 \end{figure}
+
+
 
 Figure \ref{fig:scenarios_utility} shows how changing model parameters affects the predicted benefit of MSUs, using utility as a measure. Results show the combined affect on nLVO/LVO assuming 70\% nLVO and 30\% LVO  in the treatable population. Changing time from onset to call only had marginal effect on the benefit of MSUs over usual care. Changing parameters that worsen usual care (such as lengthening ambulance response times, or lengthening arrival to IVT, lead to improved advantages of MSUs over usual care. Likewise, changing parameters that improve MSU care (such as MSU dispatch times, or time to IVT on scene) improved advantages of MSUs over usual care.
 
@@ -30,7 +32,7 @@ Figure \ref{fig:map_times} shows travel and transfer times for usual care and fo
 \begin{figure}[h]
     \centering
     \includegraphics[width=1.0\linewidth]{images/map_times.jpg}
-    \caption{Travel times for each LSOA. \textit{Left}: Travel times to nearest unit providing IVT. \textit{Middle}: Travel times to unit providing MT. For those first attending an IVT-only centre, the travel times include the travel time to the IVT-only centre, the inter-hospital travel time, and a net additional delay of 60 minutes. \textit{Right}: Travel times for MSUs. Circles show locations of IVT-only units. Stars show locations of comprehensive stroke centres providing both IVT and MT, and being the base locations of MSUs.}
+    \caption{Travel times and population density for each LSOA. \textit{Top left}: Travel times to nearest unit providing IVT. \textit{Top right}: Travel times to unit providing MT. For those first attending an IVT-only centre, the travel times include the travel time to the IVT-only centre, the inter-hospital travel time, and a net additional delay of 60 minutes. \textit{Bottom left}: Travel times for MSUs. \textit{Bottom right}: Population desnity (with scale capped at 100 persons per hectre). Circles show locations of IVT-only units. Stars show locations of comprehensive stroke centres providing both IVT and MT, and being the base locations of MSUs.}
     \label{fig:map_times}
 \end{figure}
 
@@ -60,14 +62,14 @@ Figure \ref{fig:msu_histograms} shows histograms of benefit of MSUs over usual c
 
 \subsection{Varying number of MSU locations}
 
-A greedy algorithm was used to select locations of MSUs. The utility gain is calculated for those patients treated by a MSU rather than usual care. As the number of MSU locations increased, the benefit of MSUs over usual care increased (\ref{fig:greedy}), but with diminishing returns. The advantage of MSU care over usual care improved utility by 0.020, 0.024, 0.027, and  with 10, 25, 50 and 100 MSU base locations. 
+A greedy algorithm was used to select locations of MSUs. The utility gain is calculated for those patients treated by a MSU rather than usual care. As the number of MSU locations increased, the benefit of MSUs over usual care increased (\ref{fig:greedy}), but with diminishing returns. The advantage of MSU care over usual care improved utility by 0.020, 0.024, 0.027, and  with 10, 25, 50 and 100 MSU base locations when MSU locations are chosen from any sttroke unit type. 
 
-When selecting locations of mobile stroke units, in the first 10 selections, 3 were comprehensive stroke units, and in the first 20, 8 were comprehensive stroke units.
+When selecting locations of mobile stroke units, in the first 10 selections, 3 were comprehensive stroke units, and in the first 20, 8 were comprehensive stroke units. With MSUs based at 23 current MY centres the net utility benefit over normal care was 0.022. With optimal selection of location of the same number of bases the utility benefit was increased to 0.023.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\linewidth]{images/msu_advantages_greedy.png}
-    \caption{Increasing number of base locations of MSUs, with selection by a greedy algorithm based on improvements in utility. The utility improvement is for those patients treated by MSU rather than usual care.}
+    \caption{Increasing number of base locations of MSUs, with selection by a greedy algorithm based on improvements in utility. The utility improvement is for those patients treated by MSU rather than usual care. Units were choself either from any stroke unit type (solid line) or only from comprehensive stroke centres (dashed line).}
     \label{fig:greedy}
 \end{figure}
 

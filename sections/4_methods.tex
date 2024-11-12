@@ -68,7 +68,7 @@ Scenario analysis was undertaken to investigate how changing assumed model param
 
 \subsection{Geographic analysis}
 
-To study geographic variation in benefit of MSUs, a single set of parameters was chosen, reflecting a reasonable base case for performance of normal care and MSU care. Process times (minutes) are shown below, with ambulance and MSU travel times and inter-hospital travel times dependent on patient location (LSOA). In this base case scenario MSUs are based at comprehensive stroke centres only. Admission numbers per LSOA were taken from HES 2017-2019 (using OCD-10 codes of I61, I63 and I64).
+To study geographic variation in benefit of MSUs, a single set of parameters was chosen, reflecting a reasonable base case for performance of normal care and MSU care. Process times (minutes) are shown below, with ambulance and MSU travel times and inter-hospital travel times dependent on patient location (LSOA). In this base case scenario MSUs are based at comprehensive stroke centres only. Admission numbers per LSOA were taken from HES 2017-2019 (using OCD-10 codes of I61, I63 and I64). Population density was taken from the Office of National Statistics 2011 census.
 
 
 \begin{minipage}{1.0\textwidth}  % Define the width of the minipage
@@ -100,4 +100,4 @@ To study geographic variation in benefit of MSUs, a single set of parameters was
 
 \subsection{Varying number of MSU locations}
 
-In order to study the effect of changing the number of MSU base locations, a greedy algorithm was used. In this method, 100 MSU locations are added, chosen from any stroke unit type, in the order of maximum improvement in outcomes (utility). The utility gain is calculated for those patients treated by a MSU rather than usual care; the algorithm is therefore looking at the effect of changing MSU locations rather than the number of physical MSUs.
+In order to study the effect of changing the number of MSU base locations, a greedy algorithm was used. In this method, 100 MSU locations are added, chosen from either only comprehensive stroke centres, or from any stroke unit type, in the order of maximum improvement in outcomes (utility). The utility gain is calculated for those patients treated by a MSU rather than usual care; the algorithm is therefore looking at the effect of changing MSU locations rather than the number of physical MSUs.
