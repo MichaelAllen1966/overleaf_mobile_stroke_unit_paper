@@ -24,6 +24,7 @@
 \usepackage{pdflscape} % To create landscape pages that show as landscape in PDF viewer
 \usepackage{placeins} % to use \FloatBarrier where want a hard break between content (to force and order of text and figures
 \usepackage{ragged2e} % Better right ragged edges (allows hyphenation)
+\usepackage{setspace} % For line spacing control
 \usepackage{subcaption} % Allows use of subfigures
 \usepackage{titlesec} % For title spacing
 \usepackage[toc,page]{appendix}
@@ -52,15 +53,17 @@
 \input{sections/1_title}
 \maketitle
 \begin{refsection} % Allows separate references for main paper and, later, appendix
-\input{sections/2_abstract}
-\input{sections/3_introduction}
+%\input{sections/2_abstract}
+%\input{sections/3_introduction}
 \input{sections/4_methods}
 \input{sections/5_results}
-\input{sections/6_discussion}
+%\input{sections/6_discussion}
 % References
+\clearpage
+\newpage
 \printbibliography
 \end{refsection}
-\include{sections/7_other_material}
+%\include{sections/7_other_material}
 
 % Number for supplementary material
 \newcommand{\beginsupplement}{
