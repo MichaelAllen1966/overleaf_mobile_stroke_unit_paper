@@ -8,3 +8,14 @@ These \emph{t=0} mRS 0-1 data inform the weights for weighted averages of the pr
 The time to no effect was 6.3 hours for IVT \cite{emberson_effect_2014} and 8.0 hours for MT \cite{ fransen_time_2016} (our model did not include selection of patients who may still benefit from treatment beyond these durations). We derived each \textit{No Effect} mRS distribution by applying the excess death rate due to treatment equally across the patient’s mRS distribution had they not received treatment (to represent that no benefit from treatment has been received as it was given too late, but the patient has been exposed to the risk from receiving the treatment).
 
 We calculate the remaining IVT data using excess death rates of 1.1\% for nLVO and 3.4\% for LVO, from the difference in death rates of trial groups given IVT and given no treatment \cite{emberson_effect_2014}.
+
+\subsection{Top 10 locations for MSUs}
+
+Figure \ref{fig:top_10} shows the first 10 locations chosen by a greedy algorithm, where MSU locations are added one at a time, with each new location selected based on the best possible improvement in utility by adding one more unit.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/top_10_msu_map.jpg}
+    \caption{Top 10 locations (red stars) chosen by a greedy algorithm for maximising benefit from MSUs. White circles show locations of PSCs (providing only IVT). White stars show locations of CSCs (providing both IVT and MT), and being the base locations of MSUs.}
+    \label{fig:top_10}
+\end{figure}
