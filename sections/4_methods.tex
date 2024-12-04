@@ -12,7 +12,7 @@ We performed our analysis across England using LSOA as our geographic footprint.
 
 \subsection{Stroke admission data}
 
-Stroke admission numbers per LSOA were taken from Hospital Episode Statistics (HES) 2017-2019 (using ICD-10 codes of I61, I63 and I64). The stroke patient population were divided into stroke type cohorts, based on vessel occlusion type (LVO and nLVO). Using analysis from reperfusion treatment clinical trials \cite{lees_time_2010, emberson_effect_2014, goyal_endovascular_2016, fransen_time_2016}, we classify each patient's vessel occlusion type based on their National Institutes of Health Stroke Scale (NIHSS) on arrival (NIHSS 0-10 as nLVO; NIHSS 11+ as LVO), as NIHSS has been shown to have higher accuracy in separating nLVO and LVO than other stroke scales (Area Under the Receiver Operating Characteristic Curve = 0.86 \cite{duvekot_comparison_2021}). Applying this classification to the stroke admission data in England and Wales (Sentinel Stroke National Audit Programme), this provides an estimate of 30\% LVO and 70\% nLVO in the treatable population. This proportion split was applied to each of the LSOAs in the study (to divide the total stroke admissions by LSOA as provided by HES into these two patient stroke type cohorts). These derived values were also cross-checked against stroke types identified in studies on pre-hospital selection of patients with suspected LVO \cite{de_la_ossa_herrero_design_2013}, where LVO made up 38\% of the population where RACE was applied. Population density was taken from the Office of National Statistics 2011 census.
+Stroke admission numbers per LSOA were taken from Hospital Episode Statistics (HES) 2017-2019 (using ICD-10 codes of I61, I63 and I64). In total there were 242,874 recorded stroke admissions coming from an England LSOA across those three years (an average of 2.47 admissions per LSO per year). The stroke patient population were divided into stroke type cohorts, based on vessel occlusion type (LVO and nLVO). Using analysis from reperfusion treatment clinical trials \cite{lees_time_2010, emberson_effect_2014, goyal_endovascular_2016, fransen_time_2016}, we classify each patient's vessel occlusion type based on their National Institutes of Health Stroke Scale (NIHSS) on arrival (NIHSS 0-10 as nLVO; NIHSS 11+ as LVO), as NIHSS has been shown to have higher accuracy in separating nLVO and LVO than other stroke scales (Area Under the Receiver Operating Characteristic Curve = 0.86 \cite{duvekot_comparison_2021}). Applying this classification to the stroke admission data in England and Wales (Sentinel Stroke National Audit Programme), this provides an estimate of 30\% LVO and 70\% nLVO in the treatable population. This proportion split was applied to each of the LSOAs in the study (to divide the total stroke admissions by LSOA as provided by HES into these two patient stroke type cohorts). These derived values were also cross-checked against stroke types identified in studies on pre-hospital selection of patients with suspected LVO \cite{de_la_ossa_herrero_design_2013}, where LVO made up 38\% of the population where RACE was applied. Population density was taken from the Office of National Statistics 2011 census.
 
 \subsection{Pathway processes modelling}
 
@@ -61,7 +61,7 @@ Scenario analysis was undertaken to investigate how changing assumed model param
         \item Call to ambulance arrival: 15, 30, 45
         \item Ambulance on-scene: 20, 30, 45
         \item Hospital arrival to IVT (door-to-needle): 30, 45
-        \item Net MT delay (excluding travel time): 30, 60, 90
+        \item Transfer-related net MT delay (excluding travel time): 30, 60, 90
         \item Hospital arrival to MT (door-to-puncture): 60, 90, 120
     \end{itemize}
     \item Mobile stroke units:
@@ -75,7 +75,7 @@ Scenario analysis was undertaken to investigate how changing assumed model param
 \end{spacing}
 \end{minipage}
 
-At the CSC in the usual care pathway, the \emph{hospital arrival to MT} time is likely to be shorter for patients transferred from a PSC, than for patients who are directly admitted. This is due to some of the necessary processes (such as information gathering, imaging and IVT) already being completed at the PSC. However, these patients will experience a delay in receiving MT (in addition to their inter-hospital travel time) due to waiting for transfer from the PSC. These two time durations (additional time waiting for transfer and shorter \emph{hospital arrival to MT}) are represented in the model as a single parameter: the \emph{net MT delay} parameter. For example, if the time spent in the PSC is 90 minutes (known as the \textit{door-in-door-out} time), but the \textit{hospital arrival to MT} is reduced by 30 minutes, this is represented by setting \textit{net delay in MT} to 60 minutes in the model and leaving the \emph{hospital arrival to MT} unchanged.
+At the CSC in the usual care pathway, the \emph{hospital arrival to MT} time is likely to be shorter for patients transferred from a PSC, than for patients who are directly admitted. This is due to some of the necessary processes (such as information gathering, imaging and IVT) already being completed at the PSC. However, these patients will experience a delay in receiving MT (in addition to their inter-hospital travel time) due to waiting for transfer from the PSC. These two time durations (additional time waiting for transfer and shorter \emph{hospital arrival to MT}) are represented in the model as a single parameter: the \emph{transfer-related net MT delay} parameter. For example, if the time spent in the PSC is 90 minutes (known as the \textit{door-in-door-out} time), but the \textit{hospital arrival to MT} is reduced by 30 minutes, this is represented by setting \textit{transfer-related net MT delay} to 60 minutes in the model and leaving the \emph{hospital arrival to MT} unchanged.
 
 \subsection{Geographic analysis}
 
@@ -93,7 +93,7 @@ To study geographic variation in benefit of MSU care, a single set of parameters
         \item Call to ambulance arrival: 20
         \item Ambulance on-scene: 30
         \item Hospital arrival to IVT: 45
-        \item Transfer-related delay (excluding travel time): 60
+        \item Transfer-related net MT delay (excluding travel time): 60
         \item Hospital arrival to MT: 90
     \end{itemize}
     \item Mobile stroke units:
@@ -110,4 +110,4 @@ To study geographic variation in benefit of MSU care, a single set of parameters
 
 \subsection{Varying number of MSU base locations}
 
-In order to study the effect of changing the number of MSU base locations, a greedy algorithm was used. In this method, 100 MSU base locations are sequentially added, with each additional one chosen only from the CSCs, in the order of maximum improvement in outcomes (utility). The utility gain is calculated for those patients treated by an MSU rather than usual care; the algorithm is therefore looking at the effect of changing the number of MSU base locations, rather than the number of physical MSUs. The algorithm can also be run with MSUs chosen from any stroke unit type.
+In order to study the effect of changing the number of MSU base locations, a greedy algorithm was used. In this method, 100 MSU base locations are sequentially added, with each additional one chosen from the 101 current stroke units (of any type), in the order of maximum improvement in outcomes (utility). The utility gain is calculated for those patients treated by an MSU rather than usual care; the algorithm is therefore looking at the effect of changing the number of MSU base locations, rather than the number of physical MSUs. The algorithm can also be run with MSU base locations chosen from only the 23 current CSCs.
