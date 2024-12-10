@@ -8,7 +8,7 @@ Our modelling compares outcomes for those patients receiving IVT or MT. We do no
 
 \subsection{Lower Super Output Areas (LSOA)}
 
-We performed our analysis across England using LSOA as our geographic footprint \footnote{\url{https://www.ons.gov.uk/methodology/geography/ukgeographies/statisticalgeographies}}. LSOAs are small areas in England, with roughly 1,500 people in each area (they were designed for demographic data collection, with each area having roughly the same number of people, rather than being the same geographic size). There are 32,843 LSOAs in England.
+We performed our analysis across England using LSOA as our geographic footprint \cite{ons}. LSOAs are small areas in England, with roughly 1,500 people in each area (they were designed for demographic data collection, with each area having roughly the same number of people, rather than being the same geographic size). There are 32,843 LSOAs in England.
 
 \subsection{Stroke admission data}
 
@@ -16,7 +16,7 @@ Stroke admission numbers per LSOA were taken from Hospital Episode Statistics (H
 
 \subsection{Pathway processes modelling}
 
-All code used for usual care and MSU care pathway modelling is available at \url{https://github.com/stroke-modelling/muster2}.
+All code used for usual care and MSU care pathway modelling is available \cite{github1}.
 
 Figure \ref{fig:process} describes the processes included in the three pathways that are modelled: two pathways for usual care depending on which type of stroke centre is nearest to the LSOA, and one pathway for MSU care. \textit{Usual care} is provided by the patient attending their nearest stroke centre, this is either i) a \textit{primary stroke centre}, PSC, providing IVT only, with onward transfer for LVO patients to the comprehensive stroke centre that is nearest to the PSC, for MT, or ii) a \textit{comprehensive stroke centre}, CSC, providing both IVT and MT. The \textit{MSU care} pathway involves the MSU providing on-scene IVT, followed by the MSU transferring the LVO patients to the closest CSC for MT. The onwards transfer of nLVO patients are not included in the scope of this modelling.
 
@@ -24,7 +24,7 @@ Based on input from three co-production workshops \cite{moseley_co-design_2024} 
 
 Unless specified otherwise, it was assumed that MSUs are located at CSCs. We also assume MSUs are equipped with CT angiography (CTA) and can identify LVO patients who will benefit from direct transfer to a CSC for MT.
 
-Geographic analysis was undertaken at Lower Super Output Area (LSOA) level. Travel times from each of the 32,843 LSOAs in England to all hospitals (PSC and CSCs), and travel times between hospitals have been estimated using Open Street Map data, with results calibrated against Google Maps. Travel times have been made available (\url{https://gitlab.com/michaelallen1966/1811_lsoa_to_acute_hospital_travel}).
+Geographic analysis was undertaken at Lower Super Output Area (LSOA) level. Travel times from each of the 32,843 LSOAs in England to all hospitals (PSC and CSCs), and travel times between hospitals have been estimated using Open Street Map data, with results calibrated against Google Maps. Travel times have been made available \cite{gitlab1}.
 
 \begin{figure}[h]
     \centering
@@ -37,7 +37,7 @@ For each LSOA, times to IVT and MT are calculated by summing all the non-travel 
 
 \subsection{Outcome modelling}
 
-Detailed methods and code used for modelling these outcomes are available at \url{https://github.com/samuel-book/stroke_outcome/}, with methods described as an online book (\url{https://samuel-book.github.io/stroke_outcome/intro.html}). The outcome model is available as a PyPI package for Python (\url{https://pypi.org/project/stroke-outcome/)}.
+Detailed methods and code used for modelling these outcomes are available \cite{github2}, with methods described as an online book \cite{github3}. The outcome model is available as a PyPI package for Python \cite{pypi}.
 
 We used modified Rankin Scale (mRS) at 6 months as a measure of outcome. mRS is the most commonly used instrument to describe post-stroke functional outcome \cite{quinn_functional_2009}, describing independence of living from a scale of 0 (no disability) through to 5 (severe disability requiring constant nursing attention), with death assigned an mRS of 6. A commonly used surrogate for independent living is  mRS 0-2. Health utility values for each mRS level were taken from Wang \textit{et al.} \cite{wang_utility-weighted_2020}. The mean mRS score, mean utility and proportion of patients with mRS 0-2 in a given mRS distribution can be compared between scenarios.
 
